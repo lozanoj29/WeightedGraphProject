@@ -45,5 +45,18 @@ def valid_incident_edges(T):
 
     return (temp_vertices.union(T[0]), temp_edges)
 
+def Prims(T):  
+    x=0
+    while T[0] != V: 
+        x+=1
+        T = valid_incident_edges(T)
+        print ("iteration "+str(x))
+        print (T)
+        print (" ")
+    cost_total = 0
+    for e in T[1]:
+        cost_total += cost(e)
+    return(T, 'Total cost:' ,cost_total)
     
+print("All the vertices used, vertex sets used for 0The Prims algorithm in the graph:", Prims(T))    
     
