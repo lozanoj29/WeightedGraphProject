@@ -1,4 +1,3 @@
-import Weighted_Graph as g
 G= g.Weighted_Graph("Text.txt")
 G.draw_graph()
 
@@ -30,6 +29,21 @@ def incident_edges(T):
             incident_edges.append(e)
    return incident_edges     
 
+def valid_incident_edges(T):
+    valid = incident_edges(T) 
+    min_edge = valid[0] 
+    for i in range(len(valid)):
+        if cost(valid[i]) < cost(min_edge):
+            min_edge = valid[i]
+
+    temp_edges = []
+    temp_edges.append(min_edge)
+    for e in T[1]:
+        temp_edges.append(e)
+
+    temp_vertices = {min_edge[0], min_edge[1]}
+
+    return (temp_vertices.union(T[0]), temp_edges)
 
     
     
