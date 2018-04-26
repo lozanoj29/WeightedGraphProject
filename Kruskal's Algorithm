@@ -2,3 +2,18 @@
 #Full path on my laptop: 'C:\\Users\\lykha\\Desktop\\MST\\Text.txt'     
 with open('Text.txt') as f:
     lines = [line.rstrip('\n') for line in f]
+
+class Graph:
+    #Pulling out the ventrices
+	def __init__(self,vertices):
+		self.V= vertices
+		self.graph = []
+	#Connecting them together	
+	def addEdge(self,u,v,w):
+		self.graph.append([u,v,w])
+     
+	def find(self, parent, i):
+		if parent[i] == i:
+			return i
+		return self.find(parent, parent[i])
+
