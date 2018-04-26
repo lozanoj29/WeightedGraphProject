@@ -1,0 +1,10 @@
+import Weighted_Graph as g
+G= g.Weighted_Graph("Text.txt")
+G.draw_graph()
+
+E = G.edge_set()           
+V = G.vertex_set()          
+
+def cost(e):                   
+    return G.edge_dict()[e]
+
