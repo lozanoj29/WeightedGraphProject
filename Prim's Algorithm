@@ -8,3 +8,28 @@ V = G.vertex_set()
 def cost(e):                   
     return G.edge_dict()[e]
 
+
+VT = {0}
+ET = []
+#tuple for Vertex and Edges
+T (VT, ET)
+
+#creates all the edges and removes any duplicates
+def incident_edges(T):
+#creates all the edges    
+    temp_edges = []
+    for e in E:
+        for v in T[0]:
+            if v in e and e not in T[1]:
+                temp_edges.append(e)
+                
+#segregates valid edges and invalid edges                
+   incident_edges = []
+   for e in temp_edges:
+        if e[0] not in T[0] or e[1] not in T[0]:
+            incident_edges.append(e)
+   return incident_edges     
+
+
+    
+    
