@@ -1,0 +1,4 @@
+#Importing the code from the file text.txt
+#Full path on my laptop: 'C:\\Users\\lykha\\Desktop\\MST\\Text.txt'     
+with open('Text.txt') as f:
+    lines = [line.rstrip('\n') for line in f]
